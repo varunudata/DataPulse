@@ -28,6 +28,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     localStorage.setItem("theme", theme);
 
     // 🔥 FORCE Toastify to match the app theme
+    //@ts-ignore
     toast.updateTheme(theme);
   }, [theme]);
 
@@ -37,7 +38,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
-
+//@ts-ignore
 toast.updateTheme = function (mode) {
   document.documentElement.style.setProperty(
     "--toastify-color-dark",
