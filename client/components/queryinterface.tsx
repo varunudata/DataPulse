@@ -116,6 +116,7 @@ export default function QueryEngine() {
       const result = await response.json();
       if (result.queryResult && Array.isArray(result.queryResult)) {
         setData(result.queryResult);
+        //@ts-ignore
         setColumns(result.queryResult.length > 0 ? Object.keys(result.queryResult[0]) : []);
         setExecutedQuery(generatedSQL);
         setVisualizationTypes(result.visualization || []);
