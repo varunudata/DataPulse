@@ -17,6 +17,10 @@ app.use("/auth", authRoutes);
 app.use("/api/db", dbRoutes);
 app.use("/api/query", queryRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.listen(PORT, () => {
   console.log("Server is running in the port :", PORT);
 });
