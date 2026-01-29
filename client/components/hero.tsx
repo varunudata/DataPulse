@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-32">
       {/* Radial gradient background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.primary/20%),transparent)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,color-mix(in_srgb,var(--primary),transparent_100%),transparent)]" />
 
       {/* Diagonal skewed line */}
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white dark:bg-background shadow-xl shadow-primary/10 ring-1 ring-border sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
