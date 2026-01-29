@@ -36,7 +36,7 @@ LOGIC FOR "components":
    - "query" must be null.
 
 LOGIC FOR "visualization":
-- Suggest AT LEAST FOUR suitable chart types based on the data requested.
+- Suggest AT LEAST FOUR suitable chart types based on the data requested. Alteast 4 chart types are must
 - Valid options: "bar" | "pie" | "line" | "area"
 - "bar": Good for comparing categories (e.g., Top 5 products).
 - "pie": Good for parts of a whole (e.g., Sales distribution).
