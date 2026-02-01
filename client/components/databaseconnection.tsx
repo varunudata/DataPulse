@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   Loader2,
   AlertCircle,
+  Sparkles,
 } from "lucide-react";
 import { Badge } from "./ui/badge";
 
@@ -28,8 +29,6 @@ export default function DatabaseConnection() {
   const [dbName, setDbName] = useState("")
   const [dbUsername, setDbUsername] = useState("")
   const [dbPassword, setDbPassword] = useState("")
-
-
 
   useEffect(() => {
     const savedCreds = sessionStorage.getItem("dbCredentials");
@@ -49,6 +48,15 @@ export default function DatabaseConnection() {
       }
     }
   }, []);
+
+  const fillDemoCredentials = () => {
+    // Demo credentials from environment variables
+    setHost(process.env.NEXT_PUBLIC_DEMO_DB_HOST || "");
+    setPort(process.env.NEXT_PUBLIC_DEMO_DB_PORT || "");
+    setDbName(process.env.NEXT_PUBLIC_DEMO_DB_NAME || "");
+    setDbUsername(process.env.NEXT_PUBLIC_DEMO_DB_USER || "");
+    setDbPassword(process.env.NEXT_PUBLIC_DEMO_DB_PASSWORD || "");
+  };
 
   const connectToDb = async (creds: any) => {
     setStatus("connecting");
@@ -148,7 +156,19 @@ export default function DatabaseConnection() {
           <Card className="p-6 sm:p-8">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-semibold">Database Credentials</h3>
-              {getStatusDisplay()}
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={fillDemoCredentials}
+                  className="gap-2 hidden sm:flex"
+                  title="Use Demo Credentials"
+                >
+                  <Sparkles className="h-4 w-4 text-amber-500" />
+                  Use Demo Data
+                </Button>
+                {getStatusDisplay()}
+              </div>
             </div>
 
             <div className="space-y-4">
