@@ -39,7 +39,7 @@ export default function RegisterPage() {
     setIsLoading(true);
     try {
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
-      const res = await fetch(`${backendUrl}/auth/signup`, {
+      const res = await fetch(`${backendUrl}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

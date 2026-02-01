@@ -25,7 +25,7 @@ export default function LoginPage() {
     setIsLoading(true);
     try {
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
-      const res = await fetch(`${backendUrl}/auth/signin`, {
+      const res = await fetch(`${backendUrl}/api/auth/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
