@@ -23,7 +23,7 @@ app.use("/api/query", queryRoutes);
 
 if (process.env.production == 1) {
   app.listen(PORT, () => {
-    console.log("Connected");
+    console.log(`Server is running in the PORT :`, PORT);
   });
 }
 export default app;
