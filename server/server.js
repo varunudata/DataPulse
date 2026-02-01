@@ -21,4 +21,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/db", dbRoutes);
 app.use("/api/query", queryRoutes);
 
+if (process.env.production == 1) {
+  app.listen(PORT, () => {
+    console.log("Connected");
+  });
+}
 export default app;
